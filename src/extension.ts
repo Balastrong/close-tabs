@@ -21,14 +21,50 @@ export function activate(context: vscode.ExtensionContext) {
       const targetFiles = vscode.window.tabGroups.all
         .flatMap((tabGroup) => tabGroup.tabs)
         .filter((tab) => {
-          const fileName = (tab.input as any).uri.fsPath;
-          return repositories.some(
-            (repository) => !hasDiff(fileName, repository)
-          );
+          if (tab.isPinned) {
+            // TODO: Add config to allow closing pinned tabs
+            return false;
+          }
+
+          if (
+            tab.input instanceof vscode.TabInputText ||
+            tab.input instanceof vscode.TabInputCustom ||
+            tab.input instanceof vscode.TabInputNotebook
+          ) {
+            const fileName = tab.input.uri.fsPath;
+            if (!fileName) {
+              return true;
+            }
+
+            const canBeClosed = repositories.some(
+              (repository) => !hasDiff(fileName, repository)
+            );
+
+            return canBeClosed;
+          }
+
+          return true;
         })
-        .map((tab) => (tab.input as any).uri as vscode.Uri);
+        .map((tab) => {
+          if (
+            tab.input instanceof vscode.TabInputText ||
+            tab.input instanceof vscode.TabInputCustom ||
+            tab.input instanceof vscode.TabInputNotebook
+          ) {
+            return tab.input.uri as vscode.Uri;
+          } else if (
+            tab.input instanceof vscode.TabInputTextDiff ||
+            tab.input instanceof vscode.TabInputNotebookDiff
+          ) {
+            return tab.input.original as vscode.Uri;
+          }
+          return undefined;
+        });
 
       for (const uri of targetFiles) {
+        if (!uri) {
+          continue;
+        }
         // https://stackoverflow.com/questions/44733028/how-to-close-textdocument-in-vs-code
         await vscode.window.showTextDocument(uri, {
           preview: true,
