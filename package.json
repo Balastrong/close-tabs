@@ -1,8 +1,8 @@
 {
   "name": "close-tabs",
   "displayName": "close-tabs",
-  "description": "More tabs closing options",
-  "version": "0.0.1",
+  "description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
+  "version": "1.0.0",
   "author": "Leonardo Montini",
   "publisher": "Balastrong",
   "repository": "https://github.com/Balastrong/close-tabs.git",
