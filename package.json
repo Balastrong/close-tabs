@@ -21,6 +21,10 @@
         "title": "Close Unchanged"
       },
       {
+        "command": "git.closeAllDiffEditors",
+        "title": "Close Diff Editors"
+      },
+      {
         "command": "workbench.action.closeEditorsToTheLeft",
         "title": "Close to the Left",
         "enablement": "!activeEditorIsFirstInGroup"
@@ -30,6 +34,10 @@
       "editor/title/context": [
         {
           "command": "close-tabs.git-unchanged",
+          "group": "1_close@20"
+        },
+        {
+          "command": "git.closeAllDiffEditors",
           "group": "1_close@29"
         },
         {
