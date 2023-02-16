@@ -2,6 +2,8 @@
 
 More options to close open tabs.
 
+![demo](./demo.gif)
+
 ## Features
 
 Add the following options to the tab context menu:

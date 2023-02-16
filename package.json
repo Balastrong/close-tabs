@@ -1,16 +1,29 @@
 {
   "name": "close-tabs",
-  "displayName": "close-tabs",
+  "displayName": "Close Tabs - Unchanged, Diff, Left and more!",
   "description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
   "version": "1.0.0",
   "author": "Leonardo Montini",
   "publisher": "Balastrong",
-  "repository": "https://github.com/Balastrong/close-tabs.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Balastrong/close-tabs.git"
+  },
   "engines": {
     "vscode": "^1.75.0"
   },
   "categories": [
+    "Visualization",
     "Other"
+  ],
+  "keywords": [
+    "close",
+    "tabs",
+    "tab",
+    "left",
+    "diff",
+    "git",
+    "unchanged"
   ],
   "license": "MIT",
   "main": "./out/extension.js",
@@ -51,6 +64,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
+    "package": "vsce package",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
