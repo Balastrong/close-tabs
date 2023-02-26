@@ -47,17 +47,40 @@
       "editor/title/context": [
         {
           "command": "close-tabs.git-unchanged",
-          "group": "1_close@20"
+          "group": "1_close@20",
+          "when": "config.closeTabs.showCloseUnchanged"
         },
         {
           "command": "git.closeAllDiffEditors",
-          "group": "1_close@29"
+          "group": "1_close@29",
+          "when": "config.closeTabs.showCloseDiffEditors"
         },
         {
           "command": "workbench.action.closeEditorsToTheLeft",
-          "group": "1_close@30"
+          "group": "1_close@30",
+          "when": "config.closeTabs.showCloseToTheLeft"
         }
       ]
+    },
+    "configuration": {
+      "title": "Close Tabs",
+      "properties": {
+        "closeTabs.showCloseUnchanged": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the \"Close Unchanged\" button."
+        },
+        "closeTabs.showCloseDiffEditors": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the \"Close Diff Editors\" button."
+        },
+        "closeTabs.showCloseToTheLeft": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the \"Close to the Left\" button."
+        }
+      }
     }
   },
   "scripts": {
