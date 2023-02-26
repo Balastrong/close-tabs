@@ -42,6 +42,7 @@ Coming soon:
 ### 1.1.0
 
 - Add settings to toggle which buttons are shown in the tab context menu.
+- Add icon to the extension! :)
 
 ### 1.0.0
 
