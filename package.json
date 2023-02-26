@@ -2,7 +2,7 @@
   "name": "close-tabs",
   "displayName": "Close Tabs - Unchanged, Diff, Left and more!",
   "description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Leonardo Montini",
   "publisher": "Balastrong",
   "icon": "icon.png",
@@ -88,7 +88,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "package": "vsce package",
+    "package": "vsce package -o packages/",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
