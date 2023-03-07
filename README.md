@@ -39,6 +39,10 @@ Coming soon:
 
 ## Release Notes
 
+### 1.1.1
+
+- Add empty `activationEvents` to fix a warning in the marketplace since vscode 1.77.
+
 ### 1.1.0
 
 - Add settings to toggle which buttons are shown in the tab context menu.

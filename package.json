@@ -2,7 +2,7 @@
   "name": "close-tabs",
   "displayName": "Close Tabs - Unchanged, Diff, Left and more!",
   "description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Leonardo Montini",
   "publisher": "Balastrong",
   "icon": "icon.png",
@@ -28,6 +28,7 @@
   ],
   "license": "MIT",
   "main": "./out/extension.js",
+  "activationEvents": [],
   "contributes": {
     "commands": [
       {
