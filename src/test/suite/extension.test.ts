@@ -7,12 +7,6 @@ import * as closeUnchangedCommand from "../../commands/closeUnchanged";
 import * as sinon from 'sinon';
 
 suite('Extension Test Suite', () => {
-	vscode.window.showInformationMessage('Start all tests.');
-
-	test('Sample test', () => {
-		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
-	});
 	test('Command Execute Test', async () => {		
 		sinon.mock(closeUnchangedCommand).expects("closeUnchanged").once().callsFake(async ()=>{});
 		await vscode.commands.executeCommand("close-tabs.git-unchanged");
