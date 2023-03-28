@@ -23,7 +23,6 @@ export const closeUnchanged = async () => {
       .flatMap((tabGroup) => tabGroup.tabs)
       .forEach((tab) => {
         if (tab.isPinned && !config.allowClosePinnedTabs) {
-          // TODO: Add config to allow closing pinned tabs
           return;
         }
 
