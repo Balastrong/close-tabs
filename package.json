@@ -69,7 +69,7 @@
       "properties": {
         "closeTabs.allowClosePinnedTabs": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Allow closing pinned tabs."
         },
         "closeTabs.showCloseUnchanged": {
