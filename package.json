@@ -67,6 +67,11 @@
     "configuration": {
       "title": "Close Tabs",
       "properties": {
+        "closeTabs.allowClosePinnedTabs": {
+          "type": "boolean",
+          "default": false,
+          "description": "Allow closing pinned tabs."
+        },
         "closeTabs.showCloseUnchanged": {
           "type": "boolean",
           "default": true,
@@ -81,7 +86,7 @@
           "type": "boolean",
           "default": true,
           "description": "Show the \"Close to the Left\" button."
-        }
+        }    
       }
     }
   },

@@ -6,6 +6,8 @@ export const closeUnchanged = async () => {
   try {
     const gitExtension =
       vscode.extensions.getExtension<GitExtension>("vscode.git")?.exports;
+
+    const config = vscode.workspace.getConfiguration('closeTabs');
     if (!gitExtension) {
       console.log("Git extension not found");
       return;
@@ -16,12 +18,11 @@ export const closeUnchanged = async () => {
       console.log("No repositories found");
       return;
     }
-
+    
     vscode.window.tabGroups.all
       .flatMap((tabGroup) => tabGroup.tabs)
       .forEach((tab) => {
-        if (tab.isPinned) {
-          // TODO: Add config to allow closing pinned tabs
+        if (tab.isPinned && !config.allowClosePinnedTabs) {
           return;
         }
 
