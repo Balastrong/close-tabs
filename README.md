@@ -12,10 +12,16 @@ Add the following options to the tab context menu:
 - Close all Diff Editors (Working Tree tabs).
 - Close all tabs to the left.
 - Fine-grained settings to toggle which buttons are shown in the tab context menu.
+- Enable/disable the extension for pinned tabs via settings.
 
 ## Extension Settings
 
 ```json
+"closeTabs.allowClosePinnedTabs": {
+    "type": "boolean",
+    "default": false,
+    "description": "Allow closing pinned tabs."
+},
 "closeTabs.showCloseUnchanged": {
     "type": "boolean",
     "default": true,
@@ -35,9 +41,13 @@ Add the following options to the tab context menu:
 
 Coming soon:
 
-- [#8](https://github.com/Balastrong/close-tabs/issues/8): Add setting to include/exclude pinned tabs
+- Suggest/Request your feature by opening an issue!
 
 ## Release Notes
+
+### 1.1.2
+
+- Enable/disable the extension for pinned tabs via settings.
 
 ### 1.1.1
 
