@@ -40,7 +40,7 @@
         "title": "Close Diff Editors"
       },
       {
-        "command": "workbench.action.closeEditorsToTheLeft",
+        "command": "close-tabs.close-left",
         "title": "Close to the Left",
         "enablement": "!activeEditorIsFirstInGroup"
       }
@@ -58,7 +58,7 @@
           "when": "config.closeTabs.showCloseDiffEditors"
         },
         {
-          "command": "workbench.action.closeEditorsToTheLeft",
+          "command": "close-tabs.close-left",
           "group": "1_close@30",
           "when": "config.closeTabs.showCloseToTheLeft"
         }
