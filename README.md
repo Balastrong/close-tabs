@@ -45,6 +45,10 @@ Coming soon:
 
 ## Release Notes
 
+### 1.1.4
+
+- Fixed "Close Unchanged" in projects with multiple repositories.
+
 ### 1.1.3
 
 - Temporary fix for Close Left (only works from the active tab until a better solution is found.)
