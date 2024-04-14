@@ -7,7 +7,7 @@ export const closeUnchanged = async () => {
     const gitExtension =
       vscode.extensions.getExtension<GitExtension>("vscode.git")?.exports;
 
-    const config = vscode.workspace.getConfiguration('closeTabs');
+    const config = vscode.workspace.getConfiguration("closeTabs");
     if (!gitExtension) {
       console.log("Git extension not found");
       return;
@@ -18,7 +18,7 @@ export const closeUnchanged = async () => {
       console.log("No repositories found");
       return;
     }
-    
+
     vscode.window.tabGroups.all
       .flatMap((tabGroup) => tabGroup.tabs)
       .forEach((tab) => {
@@ -38,7 +38,7 @@ export const closeUnchanged = async () => {
             return;
           }
 
-          const canBeClosed = repositories.some(
+          const canBeClosed = repositories.every(
             (repository) => !hasDiff(fileName, repository)
           );
 
