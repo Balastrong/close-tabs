@@ -24,7 +24,8 @@
     "left",
     "diff",
     "git",
-    "unchanged"
+    "unchanged",
+    "type"
   ],
   "license": "MIT",
   "main": "./out/extension.js",
@@ -43,6 +44,10 @@
         "command": "close-tabs.close-left",
         "title": "Close to the Left",
         "enablement": "!activeEditorIsFirstInGroup"
+      },
+      {
+        "command": "close-tabs.closeType",
+        "title": "Close Type"
       }
     ],
     "menus": {
@@ -61,6 +66,11 @@
           "command": "close-tabs.close-left",
           "group": "1_close@30",
           "when": "config.closeTabs.showCloseToTheLeft"
+        },
+        {
+          "command": "close-tabs.closeType",
+          "group": "1_close@31",
+          "when": "config.closeTabs.showCloseType"
         }
       ]
     },
@@ -86,8 +96,23 @@
           "type": "boolean",
           "default": true,
           "description": "Show the \"Close to the Left\" button."
+        },
+        "closeTabs.showCloseType": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show \"Close Type\" command in the context menu"
+        },
+        "closeTabs.extensionsToClose": {
+          "type": "array",
+          "default": [],
+          "description": "List of file extensions to close"
+        },
+        "closeTabs.extensionsCaseSensitive": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the file extension matching is case sensitive"
         }
-      }
+        }
     }
   },
   "scripts": {

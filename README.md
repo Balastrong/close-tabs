@@ -11,6 +11,7 @@ Add the following options to the tab context menu:
 - Close all open tabs without changes (from the git working tree).
 - Close all Diff Editors (Working Tree tabs).
 - Close all tabs to the left.
+- Close all tabs with the same file type or file type specified in settings.
 - Fine-grained settings to toggle which buttons are shown in the tab context menu.
 - Enable/disable the extension for pinned tabs via settings.
 
@@ -37,6 +38,21 @@ Add the following options to the tab context menu:
     "default": true,
     "description": "Show the \"Close to the Left\" button."
 }
+"closeTabs.showCloseToTheLeft": {
+    "type": "boolean",
+    "default": true,
+    "description": "Show the \"Close to the Left\" button."
+}
+"config.closeTabs.showCloseType": {
+    "type": "boolean",
+    "default": true,
+    "description": "Show \"Close Type\" command in the context menu"
+}
+"closeTabs.extensionsToClose": [
+    "pdf",
+    ".png"
+]
+"closeTabs.extensionsCaseSensitive": false
 ```
 
 Coming soon:
