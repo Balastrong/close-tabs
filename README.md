@@ -46,7 +46,7 @@ Add the following options to the tab context menu:
 "config.closeTabs.showCloseType": {
     "type": "boolean",
     "default": true,
-    "description": "Show \"Close Type\" command in the context menu"
+    "description": "Show \"Close all of Type\" command in the context menu"
 }
 "closeTabs.extensionsToClose": [
     "pdf",
@@ -60,6 +60,12 @@ Coming soon:
 - Suggest/Request your feature by opening an issue!
 
 ## Release Notes
+
+### 1.1.5
+
+- Added "Close all of Type" command in the context menu to close all tabs with the same file extension as the selected tab.
+- Added "Close default Types" command to close all open tabs specified in the new `closeTabs.extensionsToClose` setting.
+- Added `closeTabs.extensionsToClose` setting to specify which file extensions to close with the new "Close default Types" command.
 
 ### 1.1.4
 

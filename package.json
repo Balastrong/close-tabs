@@ -2,7 +2,7 @@
   "name": "close-tabs",
   "displayName": "Close Tabs - Unchanged, Diff, Left and more!",
   "description": "More tabs closing options (close to the left, close unchanged, close diff editors and more!)",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "Leonardo Montini",
   "publisher": "Balastrong",
   "icon": "icon.png",
@@ -74,7 +74,7 @@
         {
           "command": "close-tabs.closeAllOfType",
           "group": "1_close@31",
-          "when": "config.closeTabs.closeAllOfType"
+          "when": "config.closeTabs.showCloseType"
         },
         {
           "command": "close-tabs.closeDefaultTypes",
@@ -106,10 +106,10 @@
           "default": true,
           "description": "Show the \"Close to the Left\" button."
         },
-        "closeTabs.closeAllOfType": {
+        "closeTabs.showCloseType": {
           "type": "boolean",
           "default": true,
-          "description": "Show \"Close all of type\" command in the context menu"
+          "description": "Show \"Close all of Type\" command in the context menu"
         },
         "closeTabs.closeDefaultTypes": {
           "type": "boolean",
