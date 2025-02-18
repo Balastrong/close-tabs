@@ -46,8 +46,12 @@
         "enablement": "!activeEditorIsFirstInGroup"
       },
       {
-        "command": "close-tabs.closeType",
-        "title": "Close Type"
+        "command": "close-tabs.closeAllOfType",
+        "title": "Close all of Type"
+      },
+      {
+        "command": "close-tabs.closeDefaultTypes",
+        "title": "Close default Types"
       }
     ],
     "menus": {
@@ -68,9 +72,14 @@
           "when": "config.closeTabs.showCloseToTheLeft"
         },
         {
-          "command": "close-tabs.closeType",
+          "command": "close-tabs.closeAllOfType",
           "group": "1_close@31",
-          "when": "config.closeTabs.showCloseType"
+          "when": "config.closeTabs.closeAllOfType"
+        },
+        {
+          "command": "close-tabs.closeDefaultTypes",
+          "group": "1_close@32",
+          "when": "config.closeTabs.closeDefaultTypes && config.closeTabs.extensionsToClose.length > 0"
         }
       ]
     },
@@ -97,22 +106,27 @@
           "default": true,
           "description": "Show the \"Close to the Left\" button."
         },
-        "closeTabs.showCloseType": {
+        "closeTabs.closeAllOfType": {
           "type": "boolean",
           "default": true,
-          "description": "Show \"Close Type\" command in the context menu"
+          "description": "Show \"Close all of type\" command in the context menu"
+        },
+        "closeTabs.closeDefaultTypes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show \"Close default Types\" command in the context menu"
         },
         "closeTabs.extensionsToClose": {
           "type": "array",
           "default": [],
-          "description": "List of file extensions to close"
+          "description": "List of file extensions to close with the command \"Close default types\""
         },
         "closeTabs.extensionsCaseSensitive": {
           "type": "boolean",
           "default": false,
           "description": "Whether the file extension matching is case sensitive"
         }
-        }
+      }
     }
   },
   "scripts": {
